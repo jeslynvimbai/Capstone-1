@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <a href="{% url 'band:events' %}">Upcoming Events</a>
+    <a href="{% url 'band:band_members' %}">Meet The Band Members</a>
+    <a href="{% url 'band:login' %}">Signup / Login As A Patroene</a>
+    <title>Rockin' Legends - Homepage</title>
+</head>
+<body>
+    <h1>Welcome to Rockin' Legends!</h1>
+    
+    <!-- Featured Music -->
+    <h2>Featured Music</h2>
+    <ul>
+        {% for track in featured_tracks %}
+            <li>
+                <h3>{{ track.title }}</h3>
+                <p><strong>Artist:</strong> {{ track.artist }}</p>
+                <audio controls>
+                    <source src="{{ track.url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <!-- Latest News and Updates -->
+    <h2>Latest News</h2>
+    <ul>
+        {% for news in latest_news %}
+            <li>
+                <h3>{{ news.title }}</h3>
+                <p><strong>Date:</strong> {{ news.date }}</p>
+                <p>{{ news.content }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

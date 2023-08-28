@@ -1,0 +1,48 @@
+/* bandmemberstyles.css */
+
+/* Apply a background color to the body */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the container */
+.container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Style for the band member list */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style for each band member */
+li {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+strong {
+    font-weight: bold;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Add additional custom styles as needed */
