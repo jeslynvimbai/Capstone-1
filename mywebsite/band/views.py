@@ -6,8 +6,14 @@ from datetime import date
 from django.shortcuts import render
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render
+from .models import BandMember, Event
+from datetime import date
 
 def homepage(request):
+    '''
+    this rendera the homepage
+    '''
     featured_tracks = [
         {'title': 'Track 1', 'artist': 'Rockin\' Legends', 'url': '/media/audio/track1.mp3'},
         {'title': 'Track 2', 'artist': 'Rockin\' Legends', 'url': '/media/audio/track2.mp3'},
@@ -27,13 +33,10 @@ def homepage(request):
     
     return render(request, 'band/homepage.html', context)
 
-from django.shortcuts import render
-from .models import BandMember, Event
-from datetime import date
-
-# ... Other views ...
-
 def band_members(request):
+    '''
+    This renders the band members
+    '''
     # Sample band member data
     members = [
         {'name': 'Jimmy', 'role': 'Lead Guitarist', 'years_active': 10},
@@ -46,6 +49,9 @@ def band_members(request):
     return render(request, 'band/band_members.html', {'band_members': members})
 
 def events(request):
+    '''
+    This renders the upcoming events
+    '''
     # Sample event data
     upcoming_events = [
         {'title': 'Rockin The Daisies', 'date': date(2023, 8, 25), 'location': 'Pretoria', 'description': 'A rocking concert you don\'t want to miss!', 'tickets_available': 100},
@@ -55,6 +61,9 @@ def events(request):
     return render(request, 'band/events.html', {'upcoming_events': upcoming_events})
 
 def signup(request):
+    '''
+    This renders the signup page
+    '''
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
