@@ -26,3 +26,14 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+
+import os
+import sys
+import django
+
+sys.path.insert(0, os.path.abspath('../'))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mywebsite.settings")
+
+django.setup()
+
